@@ -31,11 +31,11 @@ def diebold_mariano_test(real, pred_1, pred_2):
 # ==========================================
 # 2. CARGA Y CONFIGURACIÓN
 # ==========================================
-ruta_data = Path.home() / "Documents" / "tesis" / "data limpia" / "dataset_final_para_modelos.csv"
+ruta_data = Path.home() / "Documents" / "tesis" / "data limpia" / "nombre del csv"
 df_raw = pd.read_csv(ruta_data)
 df_raw['fecha'] = pd.to_datetime(df_raw['fecha'])
 
-canales = ['Agencias', 'Agentes', 'ATMs', 'Digital']
+canales = ['Listado nombres de canales']
 resumen_tesis = []
 
 for canal in canales:
