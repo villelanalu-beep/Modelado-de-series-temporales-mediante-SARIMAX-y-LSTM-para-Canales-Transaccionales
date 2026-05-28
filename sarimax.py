@@ -8,8 +8,8 @@ from pathlib import Path
 # ==========================================
 # 1. CONFIGURACIÓN Y CARGA DE DATOS
 # ==========================================
-ruta_data = Path.home() / "Documents" / "tesis" / "data limpia" / "dataset_final_para_modelos.csv"
-CANAL_OBJETIVO = 'ATMs'  # <--- Cambia segun canal
+ruta_data = Path.home() / "Documents" / "tesis" / "data limpia" / "nombre del csv"
+CANAL_OBJETIVO = 'Canal'  # <--- Cambia segun canal
 
 df = pd.read_csv(ruta_data)
 df['fecha'] = pd.to_datetime(df['fecha'])
