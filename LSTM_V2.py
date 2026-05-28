@@ -10,7 +10,7 @@ from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras.optimizers import Adam
 
 # 1. CARGA Y PREPARACIÓN 
-ruta_data = Path.home() / "Documents" / "tesis" / "data limpia" / "dataset_final_para_modelos.csv"
+ruta_data = Path.home() / "Documents" / "tesis" / "data limpia" #/nombre del csv
 df_raw = pd.read_csv(ruta_data)
 df_raw['fecha'] = pd.to_datetime(df_raw['fecha'])
 
