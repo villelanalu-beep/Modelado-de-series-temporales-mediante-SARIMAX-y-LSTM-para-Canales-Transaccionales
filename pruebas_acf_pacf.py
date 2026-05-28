@@ -4,7 +4,7 @@ from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
 from pathlib import Path
 
 # 1. Carga de datos
-ruta_csv = Path.home() / "Documents" / "serie_diaria_atms_limpia.csv"
+ruta_csv = Path.home() / "Documents" / "nombre del csv"
 df = pd.read_csv(ruta_csv)
 df['fecha_dt'] = pd.to_datetime(df['fecha_dt'])
 df = df.sort_values('fecha_dt').set_index('fecha_dt')
