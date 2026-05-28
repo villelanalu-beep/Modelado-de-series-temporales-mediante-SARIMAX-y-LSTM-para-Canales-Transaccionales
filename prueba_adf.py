@@ -11,7 +11,7 @@ def test_estacionariedad(serie, nombre):
         print("Resultado: La serie NO es estacionaria (No rechaza H0)")
 
 # Aplicar a tus sets de entrenamiento diferenciados
-test_estacionariedad(train_atms['volumen'].diff(), "ATMs")
-test_estacionariedad(train_digital['volumen'].diff(), "Digital")
-test_estacionariedad(df_agencias['volumen'].diff(), "Agencias")
-test_estacionariedad(df_agencias['volumen'].diff(), "Agentes Bancarios")
+test_estacionariedad(train_canal1['volumen'].diff(), "Canal1")
+test_estacionariedad(train_canal2['volumen'].diff(), "Canal2")
+test_estacionariedad(df_canal3['volumen'].diff(), "Canal3")
+test_estacionariedad(df_canal4['volumen'].diff(), "Canal4")
