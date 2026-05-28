@@ -24,5 +24,5 @@ def ejecutar_ljungbox(serie, titulo):
         print(f"\nALERTA: p-value > 0.05. No se rechaza la independencia serial.")
         print("La serie se comporta como ruido blanco. Un modelo complejo podría no aportar valor.")
 
-# Ejecución sobre el 80% de entrenamiento de ATMs
-ejecutar_ljungbox(train_atms['volumen'], "Cajeros Automáticos (ATMs)")
+# Ejecución sobre el 80% de entrenamiento del canal
+ejecutar_ljungbox(train_canal['volumen'], "Canal")
