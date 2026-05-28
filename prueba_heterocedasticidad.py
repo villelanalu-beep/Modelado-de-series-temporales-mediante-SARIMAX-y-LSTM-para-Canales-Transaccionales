@@ -25,5 +25,5 @@ def ejecutar_heterocedasticidad(serie, titulo):
         print(f"\nCONCLUSIÓN: p-value > 0.05. No hay evidencia de heterocedasticidad.")
         print("La varianza es aproximadamente constante (Homocedasticidad).")
 
-# Ejecución sobre el 80% de entrenamiento de ATMs
-ejecutar_heterocedasticidad(train_atms['volumen'], "Cajeros Automáticos (ATMs)")
+# Ejecución sobre el 80% de entrenamiento del canal
+ejecutar_heterocedasticidad(train_data['volumen'], "Canal")
