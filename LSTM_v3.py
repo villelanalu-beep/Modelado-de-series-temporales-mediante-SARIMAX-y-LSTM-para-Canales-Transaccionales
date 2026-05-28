@@ -12,7 +12,7 @@ from tensorflow.keras.optimizers import Adam
 # =================================================================
 # 1. CARGA DE DATOS Y DEFINICIÓN DE MÉTRICAS
 # =================================================================
-ruta_data = Path.home() / "Documents" / "tesis" / "data limpia" / "dataset_final_para_modelos.csv"
+ruta_data = Path.home() / "Documents" / "tesis" / "data limpia" #/"nombre del csv"
 df_raw = pd.read_csv(ruta_data)
 df_raw['fecha'] = pd.to_datetime(df_raw['fecha'])
 
@@ -20,7 +20,7 @@ def calcular_smape(actual, pred):
     return 100/len(actual) * np.sum(2 * np.abs(pred - actual) / (np.abs(actual) + np.abs(pred) + 1e-10))
 
 # Canales a procesar
-canales = ['Agencias', 'Agentes', 'ATMs', 'Digital']
+canales = [#listado de nombres de los canales según el set]
 resultados_finales = []
 
 # =================================================================
