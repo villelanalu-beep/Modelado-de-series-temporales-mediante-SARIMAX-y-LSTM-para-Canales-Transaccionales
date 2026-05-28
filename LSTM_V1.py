@@ -19,7 +19,6 @@ df_raw = pd.read_csv(ruta_data)
 df_raw['fecha'] = pd.to_datetime(df_raw['fecha'])
 
 # TRANSFORMACIÓN A FORMATO ANCHO (Pivote para Multicanal)
-# Esto crea una columna por cada canal: Agencias, Agentes, ATMs, Digital
 df_pivot = df_raw.pivot(index='fecha', columns='canal', values='volumen')
 
 # Recuperar variables exógenas (Feriados, Quincenas, etc.)
@@ -129,7 +128,7 @@ plt.show()
 # =================================================================
 # 7. GRÁFICA COMPARATIVA FINAL (Ejemplo: Agentes Bancarios)
 # =================================================================
-# Cambia el índice 'i' para ver otros canales (0: Agencias, 1: Agentes, etc.)
+# Cambia el índice 'i' para ver otros canales 
 idx_canal = 1 
 plt.figure(figsize=(12, 6))
 plt.plot(y_real[:, idx_canal], label='Transacciones Reales', color='gray', alpha=0.5)
