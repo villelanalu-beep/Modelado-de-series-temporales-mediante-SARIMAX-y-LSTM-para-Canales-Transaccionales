@@ -11,7 +11,7 @@ def get_canal_data():
     return df
 
 # 2. Ejecución de la inspección visual
-df_agencias = get_data()
+df_data = get_data()
 
 # 3. Graficación con "Wildcard" (Promedio móvil para ver la tendencia)
 plt.figure(figsize=(15, 8))
