@@ -3,6 +3,7 @@ import numpy as np
 import antropy as ant
 from scipy.stats import spearmanr, entropy
 from pathlib import Path
+import nolds
 
 # --- 1. CARGA DE DATOS ---
 ruta_data = Path.home()
@@ -37,12 +38,17 @@ for canal in canales:
     # Entropía Muestral (m=2)
     # antropy por defecto asume tolerancia r = 0.2 * std(serie), cumpliendo la orden del experto
     samp_ent = ant.sample_entropy(serie_diff, order=2)
+
+    # Exponente de Lyapunov (Algoritmo de Rosenstein)
+    # min_tsep aisla temporalmente los vectores vecinos. Usamos 10 (la ventana de tu LSTM)
+    lyap_max = nolds.lyap_r(serie_diff, emb_dim=10, lag=1, min_tsep=10)
     
     resumen_tesis.append({
         'Canal': canal,
         'Entropia_Permutacion': perm_ent,
         'Entropia_Muestral': samp_ent,
-        'Mejora_MAE_LSTM_pct': mejoras_mae_lstm[canal]
+        'Mejora_MAE_LSTM_pct': mejoras_mae_lstm[canal],
+        'Lyapunov_Max_Data': lyap_max,
     })
 
 # Convertir a DataFrame (Tu tabla final a exportar)
