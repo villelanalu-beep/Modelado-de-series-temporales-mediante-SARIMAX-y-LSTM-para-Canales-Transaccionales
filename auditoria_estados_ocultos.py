@@ -85,7 +85,14 @@ print(f"Coeficiente de Variación (CV): {cv_H:.4f}")
         entropias_ht = []
         for t in range(T_muestras):
             estado_t = matriz_ht_discreta[t, :]
-            conteos = np.bincount(estado_t.astype(int), minlength=B_bins)
+            
+            # Se reemplaza cualquier NaN o Infinitos generados por la LSTM por ceros
+            estado_t_limpio = np.nan_to_num(estado_t, nan=0.0, posinf=0.0, neginf=0.0)
+            
+            # Se corta  cualquier exceso y forzamos a entero de forma segura
+            estado_t_int = np.clip(estado_t_limpio, 0, B_bins - 1).astype(int)
+            
+            conteos = np.bincount(estado_t_int, minlength=B_bins)
             probabilidades = conteos / n_neuronas
             h_t_entropia = entropy(probabilidades, base=2)
             entropias_ht.append(h_t_entropia)
