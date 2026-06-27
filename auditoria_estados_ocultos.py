@@ -58,7 +58,7 @@ print(f"Coeficiente de Variación (CV): {cv_H:.4f}")
                 nombre_capa_lstm = layer.name
                 break
         
-        modelo_oculto = Model(inputs=model.input, outputs=model.get_layer(nombre_capa_lstm).output)
+        modelo_oculto = Model(inputs=model.inputs, outputs=model.get_layer(nombre_capa_lstm).output)
         activaciones = modelo_oculto.predict(X_test, verbose=0) # verbose=0 para no ensuciar la consola
         
         # Extraer matriz (tomando el último paso de la secuencia)
